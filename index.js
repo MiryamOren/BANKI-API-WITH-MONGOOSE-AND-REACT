@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
-// mongoose.connect('mongodb://127.0.0.1:27017/products-api', {
-mongoose.connect('mongodb+srv://MiryamOren:FSciqc9dyj9-LJA@cluster0.r07fn.mongodb.net/BANK_API_DB?retryWrites=true&w=majority', {
+const DB = process.env.DB;
+mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true 
