@@ -6,8 +6,8 @@ const router = new express.Router();
 router.post('/users', (req, res) => {
   try {
     const user = new User(req.body);
-    user.save();
-    res.status(201).send(user);
+    const saveRes = user.save();
+    res.status(201).send(saveRes);
   } catch(e) {
     return res.status(400).send(e);
   }
