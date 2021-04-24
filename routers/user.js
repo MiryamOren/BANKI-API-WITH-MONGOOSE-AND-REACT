@@ -3,11 +3,11 @@ const User = require('../models/user');
 const router = new express.Router();
 
 // create user
-router.post('/users', (req, res) => {
+router.post('/users', async (req, res) => {
   try {
     const user = new User(req.body);
-    const saveRes = user.save();
-    res.status(201).send(`saveRes: ${saveRes}`);
+    const saveRes = await user.save();
+    res.status(201).send(user);
   } catch(e) {
     return res.status(400).send(e);
   }
