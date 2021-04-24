@@ -6,19 +6,13 @@ mongoose.connect(DB, {
     useCreateIndex: true,
     useUnifiedTopology: true 
 });
-const postRouter = require('./routers/post')
-const getRouter = require('./routers/get')
-const patchRouter = require('./routers/update')
-const deleteRouter = require('./routers/delete')
+const userRouter = require('./routers/user')
 
 const app = express()
 const port = process.env.PORT || 3000
 
 app.use(express.json())
-app.use(postRouter);
-app.use(getRouter);
-app.use(patchRouter);
-app.use(deleteRouter);
+app.use(userRouter);
 
 
 app.listen(port, () => {
