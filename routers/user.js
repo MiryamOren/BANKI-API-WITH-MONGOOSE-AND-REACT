@@ -7,7 +7,7 @@ router.post('/users', (req, res) => {
   try {
     const user = new User(req.body);
     const saveRes = user.save();
-    res.status(201).send(saveRes);
+    res.status(201).send(`saveRes: ${saveRes}`);
   } catch(e) {
     return res.status(400).send(e);
   }
