@@ -8,19 +8,6 @@ const Account = mongoose.model('account', {
     required: true,
     minlength: 24,
     maxlength: 24,
-    // validator(userID){
-    //   const isValid = async () => {
-    //     try {
-    //       const user = await User.findById(userID);
-    //       if (!user) {
-    //           throw new Error('Account holder not found');
-    //       }
-    //     } catch (e) {
-    //       throw new Error(e)
-    //     }
-    //   }
-    //   isValid();
-    // },
   },
   credit: {
     type: Number,
